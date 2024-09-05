@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hand Cricket Game</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Hand Cricket Game</h1>
+
+    <!-- Toss Section -->
+    <div id="toss-section" style="margin-top: 20px;">
+      <h3>Choose Heads or Tails:</h3>
+      <button id="heads-button" onclick="chooseToss('heads')">Heads</button>
+      <button id="tails-button" onclick="chooseToss('tails')">Tails</button>
+    </div>
+
+    <!-- Toss Result and Bat/Bowl Section -->
+    <div id="bat-bowl-section" style="margin-top: 20px; display: none;">
+      <h3 id="toss-result"></h3>
+      <button id="bat-button" onclick="chooseBatBowl('bat')">Bat</button>
+      <button id="bowl-button" onclick="chooseBatBowl('bowl')">Bowl</button>
+    </div>
+
+    <!-- Input Section -->
+    <div id="input-section" style="display: none;">
+      <h3>Enter a number (1 to 6):</h3>
+      <input type="number" id="player-choice" min="1" max="6">
+      <button onclick="playRound()">Play</button>
+    </div>
+
+    <!-- Display Hands -->
+    <div class="hand-display" style="margin-top: 20px;">
+      <div>
+        <h3>Player Hand</h3>
+        <div id="player-hand-image" style="font-size: 50px;"></div>
+      </div>
+      <div>
+        <h3>Computer Hand</h3>
+        <div id="computer-hand-image" style="font-size: 50px;"></div>
+      </div>
+    </div>
+
+    <!-- Runs to win and Commentary -->
+    <div id="runs-to-win" style="margin-top: 20px;"></div>
+    <div id="commentary-line" style="margin-top: 20px; font-style: italic;"></div>
+
+    <!-- Player Score History -->
+    <h3>Player Scores:</h3>
+    <div id="player-score-history" style="margin-top: 10px; display: flex; gap: 10px;"></div>
+
+    <!-- Computer Score History -->
+    <h3>Computer Scores:</h3>
+    <div id="computer-score-history" style="margin-top: 10px; display: flex; gap: 10px;"></div>
+
+    <!-- Scoreboard -->
+    <div class="scoreboard" style="margin-top: 20px;">
+      <h2 id="player-score">Player Score: 0</h2>
+      <h2 id="computer-score">Computer Score: 0</h2>
+    </div>
+
+    <!-- New Game Button (shown after game ends) -->
+    <div id="new-game-section" style="display: none; margin-top: 20px;">
+      <h3>Game Over!</h3>
+      <button id="new-game-button" onclick="resetGame()">Start New Game</button>
+    </div>
+  </div>
+
+  <!-- Script References -->
+  <script src="/static/js/commentary.js"></script>
+  <script src="/static/js/game.js"></script>
+</body>
+</html>
